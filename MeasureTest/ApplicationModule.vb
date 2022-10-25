@@ -1,9 +1,13 @@
 ﻿Module ApplicationModule
 
     Sub Main()
-        Benchi.CheckTimeSpan(AddressOf PrintHello)
+        Benchi.CheckTimeSpan(NameOf(PrintHello), AddressOf PrintHello)
 
-        Console.WriteLine(Benchi.CheckTimeSpan(AddressOf GetAnswerForEverything))
+        Console.WriteLine("Result GetAnswerForEverything = " + Benchi.CheckTimeSpan(NameOf(GetAnswerForEverything), AddressOf GetAnswerForEverything).ToString())
+
+        Console.WriteLine("Result TestParameterFunction = " + Benchi.CheckTimeSpan(NameOf(TestParameterFunction), AddressOf TestParameterFunction, "Franz"))
+
+        Console.WriteLine("Result TestParameterFunction = " + Benchi.CheckTimeSpan(NameOf(TestParameterFunction), AddressOf TestParameterFunction, 4711))
 
         Console.ReadLine()
     End Sub
@@ -18,14 +22,14 @@
         Return 42
     End Function
 
-    Sub Test()
-        Dim testString = "42"
-        Dim zahl As Integer = Nothing
+    Function TestParameterFunction(name As String) As String
+        Task.Delay(500).Wait()
+        Return "Hello " + name
+    End Function
 
-        If Not Integer.TryParse(testString, zahl) Then
-            zahl = -1
-        End If
-        Console.WriteLine(zahl)
-    End Sub
+    Function TestParameterFunction(number As Integer) As String
+        Task.Delay(300).Wait()
+        Return number.ToString()
+    End Function
 
 End Module

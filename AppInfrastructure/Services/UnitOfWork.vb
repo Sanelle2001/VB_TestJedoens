@@ -6,7 +6,8 @@ Imports UnitTestDemo.AppInfrastructure.Services
 Public NotInheritable Class UnitOfWork
     Implements IUnitOfWork
 
-    Private _container As IContainer
+    Private ReadOnly _container As IContainer
+    Private ReadOnly _baseConnector As IPersistance
     Private _wasCompleted As Boolean = False
 
     Public Sub New()
@@ -16,8 +17,8 @@ Public NotInheritable Class UnitOfWork
 
         _container = builder.Build()
 
-        Dim baseConnector = _container.Resolve(Of IPersistance)
-        baseConnector.BeginTransaction()
+        _baseConnector = _container.Resolve(Of IPersistance)
+        _baseConnector.BeginTransaction()
     End Sub
 
     Public Function GetRepository(Of T)() As T Implements IUnitOfWork.GetRepository
@@ -32,7 +33,8 @@ Public NotInheritable Class UnitOfWork
 
     Public Sub Dispose() Implements IDisposable.Dispose
         _container?.Dispose()
-        If Not _wasCompleted Then
+        If Not _wasCompleted And _baseConnector.TransActionStarted Then
+
             Console.WriteLine("Irgendwie nicht gespeichert.")
         End If
     End Sub
