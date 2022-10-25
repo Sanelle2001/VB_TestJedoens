@@ -33,6 +33,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "InfrastructureTests", "Infr
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TaskTests", "TaskTests\TaskTests.vbproj", "{7B7E0E4B-B169-4456-BE37-C4C0B1113B7F}"
 EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "AppKernelTests", "AppKernelTests\AppKernelTests.vbproj", "{80F580E5-CEE1-4E2D-A5F1-59FDB1D47458}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{7B7E0E4B-B169-4456-BE37-C4C0B1113B7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B7E0E4B-B169-4456-BE37-C4C0B1113B7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B7E0E4B-B169-4456-BE37-C4C0B1113B7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80F580E5-CEE1-4E2D-A5F1-59FDB1D47458}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80F580E5-CEE1-4E2D-A5F1-59FDB1D47458}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80F580E5-CEE1-4E2D-A5F1-59FDB1D47458}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80F580E5-CEE1-4E2D-A5F1-59FDB1D47458}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -97,6 +103,7 @@ Global
 		{7C81A923-DA17-454B-AD01-D7D793EC5E15} = {B30EDA55-D94A-4392-9655-70E65AC10043}
 		{160D555B-73A3-4E33-A072-4B199C517548} = {B30EDA55-D94A-4392-9655-70E65AC10043}
 		{8F7D18BE-F130-4E3A-BE23-6AD25ACCE173} = {160D555B-73A3-4E33-A072-4B199C517548}
+		{80F580E5-CEE1-4E2D-A5F1-59FDB1D47458} = {160D555B-73A3-4E33-A072-4B199C517548}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F036B9E5-D230-4C1B-9747-6EF9437D4C6A}
